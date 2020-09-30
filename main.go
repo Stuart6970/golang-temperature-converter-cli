@@ -18,6 +18,12 @@ var errReadingInput = errors.New("Error reading input")
 
 func main() {
 
+	argLength := len(os.Args[1:])
+
+	if argLength != 2 {
+		printError(errInvalidArguments)
+	}
+
 	for {
 		fmt.Print("What is the current temperature in " + originUnit + " ? ")
 
